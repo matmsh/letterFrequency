@@ -1,1 +1,37 @@
-New
+A Hadoop job to do letter frequency analysis ( http://en.wikipedia.org/wiki/Letter_frequency).
+
+The Hadoop job is run using Spring-Hadoop http://www.springsource.org/spring-data/hadoop.
+
+RunLetterFreqStandalone.java runs the Hadoop job in standalone mode.
+
+RunLetterFreqScript.java runs the Hadoop job in Pseudo distributed or distributed mode.
+
+Below is sample output :
+
+
+matmsh@gauss:~/workspaceJava/letterFrequency/target/output> more part-r-00000
+a       86
+b       17
+c       44
+d       32
+e       118
+f       29
+g       29
+h       63
+i       79
+j       3
+k       9
+l       32
+m       17
+n       79
+o       77
+p       16
+r       84
+s       69
+t       81
+u       37
+v       7
+w       16
+x       3
+y       18
+matmsh@gauss:~/workspaceJava/letterFrequency/target/output> 
