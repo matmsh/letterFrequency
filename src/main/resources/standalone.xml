@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/hadoop"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
+  
+	<configuration/>
+	
+	 <!--  
+	        the input-path are out-path normal file directories. 
+	        Change input-path to a directory that contains some text files. 
+	  -->
+	<job id="frequencyJob" input-path="/home/matmsh/temp/hadoop/input"
+		output-path="target/output"
+	    mapper="net.sf.frequency.LetterMapper"
+		reducer="net.sf.frequency.IntSumReducer" />
+
+	<job-runner id="runner" job-ref="frequencyJob"
+		run-at-startup="true" />
+
+</beans:beans>
