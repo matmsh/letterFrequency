@@ -23,6 +23,8 @@ public class LetterMapper extends Mapper<LongWritable, Text, Text, IntWritable> 
 
 	private final static LetterSplitter splitter = new LetterSplitter();
 
+	private Text keyOut = new Text();
+	
 	/**
 	 * For each word in the line, split it to letters. An upper case letters will be 
 	 * converted to lower case.  
@@ -40,7 +42,8 @@ public class LetterMapper extends Mapper<LongWritable, Text, Text, IntWritable> 
 
 			List<String> letters = splitter.split(word);
 			for (String letter : letters) {
-				context.write(new Text(letter), one);
+				keyOut.set(letter);
+				context.write(keyOut, one);
 			}
 
 		}
